@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   node.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 22:58:13 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/14 00:17:50 by nogeun           ###   ########.fr       */
+/*   Created: 2021/09/14 00:13:56 by nogeun            #+#    #+#             */
+/*   Updated: 2021/09/14 00:19:59 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct		s_node
+int			node_append(t_stack *stack, int num)
 {
-	int				number;
-	struct s_node	*next;
-}					t_node;
+	t_node	*new_node;
 
-typedef struct		s_stack
-{
-	t_node			*head;
-	size_t			size;
-	size_t			max_count;
-}					t_stack;
-
-/*about node*/
-int					node_append(t_stack *stack, int num);
-int					node_delete(t_stack *stack);
-
-/*about stack*/
-
+	if (!(new_node = (t_node*)malloc(sizeof(t_node))))
+	{
+		return (0);
+	}
+	new_node->number = num;
+	new_node->next = stack->head;
+}
