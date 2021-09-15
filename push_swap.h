@@ -35,3 +35,6 @@ int					node_delete(t_stack *stack);
 
 /*about stack*/
 
+
+/*about utils*/
+int					utils_atoi(const char *str);

@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 00:13:56 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/14 12:57:29 by nogeun           ###   ########.fr       */
+/*   Created: 2021/09/16 00:07:51 by nogeun            #+#    #+#             */
+/*   Updated: 2021/09/16 00:12:23 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			node_append(t_stack *stack, int num)
+int			utils_atoi(const char *str)
 {
-	t_node	*new_node;
+	int		sign;
+	int		result;
 
-	if (!(new_node = (t_node*)malloc(sizeof(t_node))))
+	sign = 1;
+	result = 0;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		return (0);
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
-	new_node->number = num;
-	new_node->next = stack->head;
-	stack->head = new_node;
-	stack->count++;
-	return (1);
-}
-
-int			node_remove(t_stack *stack)
-{
-	int		num;
-	t_node	*del;
-
-	del = stack->head;
-	num = del.number;
-	stack->head = del->next;
-	free(del);
-	stack->count--;
-	return (num);
+	while (ft_isdigit(*str))
+	{
+		result = result * 10 + (*str++ - 48);
+	}
+	return (result * sign);
 }
