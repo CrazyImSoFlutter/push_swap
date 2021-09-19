@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 23:01:24 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/16 00:25:55 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/19 18:14:30 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,19 @@ t_stack		*stack_fill(int argc, char **argv)
 	t_stack	*stack;
 
 	i = argc;
+	stack = stack_init();
+	if (stack == NULL)
+		return (NULL);
+	while (--i >= 0)
+	{
+		num = utils_atoi(argv[i]);
+		if (!node_append(stack, num))
+		{
+			free_stack(stack);
+			return (NULL);
+		}
+	}
+	return (stack);
 }
 
 int			stack_contains(t_stack *stack)
@@ -48,6 +61,24 @@ int			stack_contains(t_stack *stack)
 			cmp = cmp->next;
 		}
 		std = std->next;
+	}
+	return (1);
+}
+
+int			stack_sorted(t_stack *a, t_stack *b)
+{
+	t_node	*cur;
+
+	if (!a->head)
+		return (0);
+	if (b->head != NULL)
+		return (0);
+	cur = a->head;
+	while (cur->next)
+	{
+		if (cur->number > cur->next->number)
+			return (0);
+		cur = cur->next;
 	}
 	return (1);
 }
