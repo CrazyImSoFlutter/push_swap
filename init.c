@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_print.c                                       :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 15:16:19 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 18:01:41 by nogeun           ###   ########.fr       */
+/*   Created: 2021/09/20 21:40:08 by nogeun            #+#    #+#             */
+/*   Updated: 2021/09/20 21:43:10 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
-void	test_print(t_stack *stack)
+void		init_insert(t_insert *insert)
 {
-	write(1, "****stack****\n", 15);
-	t_node *cur = stack->head;
-	while (cur)
-	{
-		int num = cur->number;
-		
-		write(1, ft_itoa(num), ft_get_digit_count(num));
-		write(1, "\n", 1);
-		cur = cur->next;
-	}
+	insert->rb = 0;
+	insert->ra = 0;
+	insert->rra = 0;
+	insert->rrb = 0;
+	insert->op_count = 2147483647;
+	insert->number = 0;
+	insert->op = 0;
 }

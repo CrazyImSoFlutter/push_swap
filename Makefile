@@ -18,6 +18,10 @@ SRCS = push_swap.c\
 	   before_sort.c\
 	   free.c\
 	   test_print.c\
+	   sort.c\
+	   insert.c\
+	   init.c\
+	   do_op.c\
 
 OBJS = $(SRCS:.c=.o)
 

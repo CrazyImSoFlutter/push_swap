@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 23:01:24 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 16:58:42 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/20 22:46:07 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stack		*stack_init(void)
 		return (NULL);
 	stack->head = NULL;
 	stack->size = 0;
-	stack->max_count = 0;
+	stack->max = -2147483648;
 	return (stack);
 }
 

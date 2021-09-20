@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:18:56 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 15:47:13 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/20 18:12:39 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void		operate_reverse_rotate(t_stack *a)
 			new_end = end;
 		end = end->next;
 	}
-	new_end = NULL;
+	new_end->next = NULL;
 	end->next = a->head;
 	a->head = end;
 }

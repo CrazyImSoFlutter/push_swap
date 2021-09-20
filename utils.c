@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 00:07:51 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 15:33:07 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/20 20:34:15 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,20 @@ char	*ft_itoa(int n)
 		digit_count--;
 	}
 	return (str);
+}
+
+int		utils_min(int a, int b)
+{
+	if (a >= b)
+		return (b);
+	else
+		return (a);
+}
+
+int		utils_max(int a, int b)
+{
+	if (a >= b)
+		return (a);
+	else
+		return (b);
 }
