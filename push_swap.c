@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 00:13:56 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 15:34:55 by nogeun           ###   ########.fr       */
+/*   Created: 2021/09/20 15:08:35 by nogeun            #+#    #+#             */
+/*   Updated: 2021/09/20 16:57:56 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			node_append(t_stack *stack, int num)
+int				main(int argc, char **argv)
 {
-	t_node	*new_node;
+	t_stack		*stack_a;
+	t_stack		*stack_b;
+	t_pred		*pred;
 
-	if (!(new_node = (t_node*)malloc(sizeof(t_node))))
-	{
-		return (0);
-	}
-	new_node->number = num;
-	new_node->next = stack->head;
-	stack->head = new_node;
-	stack->size++;
-	return (1);
-}
+	pred = (t_pred *)malloc(sizeof(t_pred));
+	pred->src_index = 0;
+	pred->dst_index = 0;
+	pred->sorted_size = 0;
+	stack_a = stack_fill(argc, argv);
+	stack_b = stack_init();
 
-int			node_remove(t_stack *stack)
-{
-	int		num;
-	t_node	*del;
-
-	del = stack->head;
-	num = del->number;
-	stack->head = del->next;
-	free(del);
-	stack->size--;
-	return (num);
+	test_print(stack_a);
+	before_find_longest_sort(pred, stack_a);
+	correction_stack(pred, stack_a);
+	test_print(stack_a);
 }

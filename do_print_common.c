@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node.c                                             :+:      :+:    :+:   */
+/*   do_print_common.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 00:13:56 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 15:34:55 by nogeun           ###   ########.fr       */
+/*   Created: 2021/09/20 14:54:37 by nogeun            #+#    #+#             */
+/*   Updated: 2021/09/20 14:57:43 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			node_append(t_stack *stack, int num)
+void	do_print_ss(t_stack *a, t_stack *b)
 {
-	t_node	*new_node;
-
-	if (!(new_node = (t_node*)malloc(sizeof(t_node))))
-	{
-		return (0);
-	}
-	new_node->number = num;
-	new_node->next = stack->head;
-	stack->head = new_node;
-	stack->size++;
-	return (1);
+	operate_swap(a);
+	operate_swap(b);
+	write(1, "ss\n", 3);
 }
 
-int			node_remove(t_stack *stack)
+void	do_print_rr(t_stack *a, t_stack *b)
 {
-	int		num;
-	t_node	*del;
+	operate_rotate(a);
+	operate_rotate(b);
+	write(1, "rr\n", 3);
+}
 
-	del = stack->head;
-	num = del->number;
-	stack->head = del->next;
-	free(del);
-	stack->size--;
-	return (num);
+void	do_print_rrr(t_stack *a, t_stack *b)
+{
+	operate_reverse_rotate(a);
+	operate_reverse_rotate(b);
+	write(1, "rrr\n", 4);
 }

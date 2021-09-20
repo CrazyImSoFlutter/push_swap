@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node.c                                             :+:      :+:    :+:   */
+/*   test_print.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 00:13:56 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 15:34:55 by nogeun           ###   ########.fr       */
+/*   Created: 2021/09/20 15:16:19 by nogeun            #+#    #+#             */
+/*   Updated: 2021/09/20 15:51:30 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "push_swap.h"
 
-int			node_append(t_stack *stack, int num)
+void	test_print(t_stack *stack)
 {
-	t_node	*new_node;
-
-	if (!(new_node = (t_node*)malloc(sizeof(t_node))))
+	write(1, "****stack_a****\n", 16);
+	t_node *cur = stack->head;
+	while (cur)
 	{
-		return (0);
+		int num = cur->number;
+
+		write(1, ft_itoa(num), ft_get_digit_count(num));
+		write(1, "\n", 1);
+		cur = cur->next;
 	}
-	new_node->number = num;
-	new_node->next = stack->head;
-	stack->head = new_node;
-	stack->size++;
-	return (1);
-}
-
-int			node_remove(t_stack *stack)
-{
-	int		num;
-	t_node	*del;
-
-	del = stack->head;
-	num = del->number;
-	stack->head = del->next;
-	free(del);
-	stack->size--;
-	return (num);
 }

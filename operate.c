@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:18:56 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/19 18:36:52 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/20 15:47:13 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		operate_swap(t_stack *a)
 	{
 		one = a->head;
 		two = one->next;
-		tmp = head->number;
+		tmp = one->number;
 		one->number = two->number;
 		two->number = tmp;
 	}
@@ -33,10 +33,9 @@ void		operate_swap(t_stack *a)
 void		operate_push(t_stack *a, t_stack *b)
 {
 	if (b->size == 0)
-		return (1);
-	else if (!node_append(a, node_delete(b)))
-		return (0);
-	return (1);
+		return ;
+	else if (!node_append(a, node_remove(b)))
+		return ;
 }
 
 void		operate_rotate(t_stack *a)

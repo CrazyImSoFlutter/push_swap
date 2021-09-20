@@ -6,9 +6,11 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 14:26:02 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/17 14:39:17 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/20 15:43:20 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void		free_argv(char **argv)
 {
@@ -42,7 +44,7 @@ void		free_stack(t_stack *stack)
 		else
 		{
 			cur->next = NULL;
-			free(next);
+			free(nex);
 		}
 	}
 	free(stack);
