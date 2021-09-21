@@ -6,11 +6,11 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 00:07:51 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 20:34:15 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/21 22:07:26 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 int		ft_isspace(int c)
 {
@@ -59,7 +59,7 @@ int		ft_get_digit_count(long int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	char			*str;
 	int				digit_count;
@@ -88,7 +88,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int		utils_min(int a, int b)
+int			utils_min(int a, int b)
 {
 	if (a >= b)
 		return (b);
@@ -96,10 +96,12 @@ int		utils_min(int a, int b)
 		return (a);
 }
 
-int		utils_max(int a, int b)
+int			utils_max(int a, int b)
 {
 	if (a >= b)
 		return (a);
 	else
 		return (b);
 }
+
+

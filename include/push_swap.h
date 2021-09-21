@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 22:58:13 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 21:49:27 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/21 21:55:34 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,9 @@ typedef struct		s_stack
 	t_node			*head;
 	int				size;
 	int				max;
+	int				max2;
+	int				max3;
 }					t_stack;
-
-typedef struct		s_pred
-{
-	int				src_index;
-	int				dst_index;
-	int				sorted_size;
-}					t_pred;
 
 typedef struct		s_insert
 {
@@ -89,14 +84,8 @@ void				do_print_rr(t_stack *a, t_stack *b);
 void				do_print_rrr(t_stack *a, t_stack *b);
 
 /*about before sort*/
-t_pred				*before_find_sorted(t_stack *stack, int *index);
-void				before_find_longest_sort(t_pred *pred, t_stack *stack);
-
-/*about correction*/
-int					correction_direction(t_pred *pred, t_stack *stack);
-void				correction_clockwise(t_pred *pred, t_stack *stack);
-void				correction_counter_clockwise(t_pred *pred, t_stack *stack);
-void				correction_stack(t_pred *pred, t_stack *stack);
+t_insert			before_sort_find_best(t_stack *a, t_stack *b);
+int					before_sort_count_rb(t_stack *b);
 
 /*about insert*/
 void				insert_ra_count(t_insert *ins, t_node *node, t_stack *stk);
@@ -106,8 +95,8 @@ void				insert_op_count(t_insert *insert);
 t_insert			insert_fill(t_node *node, t_stack *a, t_stack *b);
 
 /*about sort*/
-void				sort_a_to_b(t_pred *p, t_stack *a, t_stack *b);
-void				sort_b_to_a(t_stack *a, t_stack *b);
+void				sort_others(t_stack *a, t_stack *b);
+void				sort_three(t_stack *stack);
 
 /*about do op*/
 void				do_op_rab(t_insert i, t_stack *a, t_stack *b);
@@ -117,6 +106,13 @@ void				do_op(t_insert i, t_stack *a, t_stack *b);
 
 /*about init*/
 void				init_insert(t_insert *insert);
+
+/*about find max*/
+void				find_max1(t_stack *stack);
+void				find_max2(t_stack *stack);
+void				find_max3(t_stack *stack);
+void				find_max(t_stack *stack);
+
 /*about test print*/
 void				test_print(t_stack *stack);
 

@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   do_print_common.c                                  :+:      :+:    :+:   */
+/*   do_print_a.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 14:54:37 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 14:57:43 by nogeun           ###   ########.fr       */
+/*   Created: 2021/09/20 14:43:36 by nogeun            #+#    #+#             */
+/*   Updated: 2021/09/21 22:07:48 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
-void	do_print_ss(t_stack *a, t_stack *b)
+void	do_print_sa(t_stack *stack)
 {
-	operate_swap(a);
-	operate_swap(b);
-	write(1, "ss\n", 3);
+	operate_swap(stack);
+	write(1, "ra\n", 3);
 }
 
-void	do_print_rr(t_stack *a, t_stack *b)
+void	do_print_pa(t_stack *a, t_stack *b)
 {
-	operate_rotate(a);
-	operate_rotate(b);
-	write(1, "rr\n", 3);
+	operate_push(a, b);
+	write(1, "pa\n", 3);
 }
 
-void	do_print_rrr(t_stack *a, t_stack *b)
+void	do_print_ra(t_stack *stack)
 {
-	operate_reverse_rotate(a);
-	operate_reverse_rotate(b);
-	write(1, "rrr\n", 4);
+	operate_rotate(stack);
+	write(1, "ra\n", 3);
+}
+
+void	do_print_rra(t_stack *stack)
+{
+	operate_reverse_rotate(stack);
+	write(1, "rra\n", 4);
 }

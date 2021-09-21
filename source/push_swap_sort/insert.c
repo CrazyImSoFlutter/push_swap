@@ -6,11 +6,11 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 20:21:01 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 22:50:49 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/21 22:06:30 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 void			insert_ra_count(t_insert *insert, t_node *node, t_stack *stack)
 {

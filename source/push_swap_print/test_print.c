@@ -6,12 +6,11 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 15:16:19 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 18:01:41 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/21 22:08:17 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 void	test_print(t_stack *stack)
 {

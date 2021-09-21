@@ -6,11 +6,11 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 14:47:36 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 14:54:10 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/21 22:08:03 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 void	do_print_sb(t_stack *stack)
 {

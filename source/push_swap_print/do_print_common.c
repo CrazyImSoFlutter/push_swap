@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   do_print_common.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 21:40:08 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 21:43:10 by nogeun           ###   ########.fr       */
+/*   Created: 2021/09/20 14:54:37 by nogeun            #+#    #+#             */
+/*   Updated: 2021/09/21 22:06:01 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
-void		init_insert(t_insert *insert)
+void	do_print_ss(t_stack *a, t_stack *b)
 {
-	insert->rb = 0;
-	insert->ra = 0;
-	insert->rra = 0;
-	insert->rrb = 0;
-	insert->op_count = 2147483647;
-	insert->number = 0;
-	insert->op = 0;
+	operate_swap(a);
+	operate_swap(b);
+	write(1, "ss\n", 3);
+}
+
+void	do_print_rr(t_stack *a, t_stack *b)
+{
+	operate_rotate(a);
+	operate_rotate(b);
+	write(1, "rr\n", 3);
+}
+
+void	do_print_rrr(t_stack *a, t_stack *b)
+{
+	operate_reverse_rotate(a);
+	operate_reverse_rotate(b);
+	write(1, "rrr\n", 4);
 }
