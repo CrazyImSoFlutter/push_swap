@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 23:01:24 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:08:51 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 02:16:49 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_stack		*stack_fill(int argc, char **argv)
 	stack = stack_init();
 	if (stack == NULL)
 		return (NULL);
-	while (--i > 0)
+	while (--i >= 0)
 	{
 		num = utils_atoi(argv[i]);
 		if (!node_append(stack, num))
@@ -54,6 +54,7 @@ int			stack_contains(t_stack *stack)
 	std = stack->head;
 	while (std)
 	{
+		cmp = std->next;
 		while (cmp)
 		{
 			if (std->number == cmp->number)

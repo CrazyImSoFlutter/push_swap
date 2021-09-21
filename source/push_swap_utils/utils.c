@@ -6,21 +6,11 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 00:07:51 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:07:26 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 01:41:20 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-
-int		ft_isspace(int c)
-{
-	return ((c >= 9 && c <= 13) || c == 32);
-}
-
-int		ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
 
 int			utils_atoi(const char *str)
 {
@@ -44,22 +34,7 @@ int			utils_atoi(const char *str)
 	return (result * sign);
 }
 
-int		ft_get_digit_count(long int n)
-{
-	int		i;
-
-	if (n < 0)
-		n *= -1;
-	i = 1;
-	while (n > 9)
-	{
-		i++;
-		n /= 10;
-	}
-	return (i);
-}
-
-char				*ft_itoa(int n)
+char				*utils_itoa(int n)
 {
 	char			*str;
 	int				digit_count;
@@ -104,4 +79,18 @@ int			utils_max(int a, int b)
 		return (b);
 }
 
-
+void		utils_exit(t_stack *a, t_stack *b, char **argv, int n)
+{
+	if (n >= 1)
+		free_stack(a);
+	if (n >= 2)
+		free_stack(b);
+	if (n <= 2) {
+		write(1, "Error\n", 6);
+		printf("%d\n", n);
+		exit(EXIT_FAILURE);
+	}
+	if (n > 2)
+		exit(EXIT_SUCCESS);
+	argv = NULL;
+}

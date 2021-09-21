@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 15:16:19 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:08:17 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 00:17:18 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	test_print(t_stack *stack)
 	{
 		int num = cur->number;
 		
-		write(1, ft_itoa(num), ft_get_digit_count(num));
+		write(1, utils_itoa(num), ft_get_digit_count(num));
 		write(1, "\n", 1);
 		cur = cur->next;
 	}

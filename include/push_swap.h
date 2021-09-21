@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 22:58:13 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 21:55:34 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 02:20:57 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,17 @@ int					stack_sorted(t_stack *a, t_stack *b);
 
 /*about utils*/
 int					utils_atoi(const char *str);
-int					ft_get_digit_count(long int n);
-char				*ft_itoa(int n);
+char				*utils_itoa(int n);
 int					utils_min(int a, int b);
 int					utils_max(int a, int b);
+void				utils_exit(t_stack *a, t_stack *b, char **argv, int n);
+
+/*about libft*/
+int					ft_isspace(int c);
+int					ft_isdigit(int c);
+int					ft_get_digit_count(long int n);
+int					ft_strcmp(const char *s1, const char *s2);
+int					ft_strlen(const char *s);
 
 /*about free*/
 void				free_argv(char **argv);
@@ -86,6 +93,7 @@ void				do_print_rrr(t_stack *a, t_stack *b);
 /*about before sort*/
 t_insert			before_sort_find_best(t_stack *a, t_stack *b);
 int					before_sort_count_rb(t_stack *b);
+int					before_sort_rearrange(int *argc, char ***argv);
 
 /*about insert*/
 void				insert_ra_count(t_insert *ins, t_node *node, t_stack *stk);
@@ -97,6 +105,7 @@ t_insert			insert_fill(t_node *node, t_stack *a, t_stack *b);
 /*about sort*/
 void				sort_others(t_stack *a, t_stack *b);
 void				sort_three(t_stack *stack);
+void				sort_two(t_stack *stack);
 
 /*about do op*/
 void				do_op_rab(t_insert i, t_stack *a, t_stack *b);
@@ -113,8 +122,14 @@ void				find_max2(t_stack *stack);
 void				find_max3(t_stack *stack);
 void				find_max(t_stack *stack);
 
+/*about check*/
+int					check_digit(int argc, char **argv);
+int					check_limit(char *str, char sign);
+int					check_integer(char *str);
+int					check_argument(int argc, char **argv);
+int					check_sorted(t_stack *a, t_stack *b);
+
 /*about test print*/
 void				test_print(t_stack *stack);
-
 
 # endif

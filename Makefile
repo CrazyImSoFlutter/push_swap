@@ -17,6 +17,9 @@ SRC_SORT	=	sort.c \
 SRC_UTILS	=	find_max.c \
 				init.c \
 				utils.c \
+				free.c \
+				libft.c \
+				check.c \
 
 SRC_PRINT	=	do_print_a.c \
 				do_print_b.c \
@@ -38,15 +41,15 @@ OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
 
-$(NAME) : libs $(OBJS)
-			@$(CC) $(CFLAGS) -g -o $(NAME) $(OBJS)
+$(NAME) : $(OBJS)
+		@$(CC) $(CFLAGS) -g -o $(NAME) $(OBJS)
 
-clean:
-		rm -rf $(OBJS)
+clean :
+		@/bin/rm -rf $(OBJS)
 
-fclean: clean
-			rm -rf $(NAME)
+fclean : clean
+		@/bin/rm -rf $(NAME)
 
-re: fclean all
+re : fclean all
 
 .PHONY: all re clean fclean

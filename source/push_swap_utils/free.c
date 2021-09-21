@@ -6,11 +6,11 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 14:26:02 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/20 15:43:20 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/21 22:30:34 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 void		free_argv(char **argv)
 {
