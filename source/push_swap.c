@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 15:08:35 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 15:40:11 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 15:58:14 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int				main(int argc, char **argv)
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 	t_all		all;
-
+	
 	stack_a = NULL;
 	stack_b = NULL;
 	all.flag = 0;
