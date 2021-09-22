@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 15:08:35 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 14:31:44 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 15:40:11 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,5 @@ int				main(int argc, char **argv)
 	if (check_sorted(stack_a, stack_b))
 		utils_exit(&all, 3);
 	start_sort(stack_a, stack_b);
-	test_print(stack_a);
 	utils_exit(&all, 3);
 }

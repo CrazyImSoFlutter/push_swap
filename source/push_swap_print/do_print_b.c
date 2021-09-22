@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 14:47:36 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:08:03 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 15:39:28 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	do_print_sb(t_stack *stack)
 {
 	operate_swap(stack);
-	write(1, "rb\n", 3);
+	write(1, "sb\n", 3);
 }
 
 void	do_print_pb(t_stack *b, t_stack *a)
