@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 22:58:13 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 02:20:57 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 14:47:57 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,14 @@ typedef struct		s_insert
 	int				op;
 }					t_insert;
 
+typedef struct		s_all
+{
+	t_stack			*a;
+	t_stack			*b;
+	char			**argv;
+	int				flag;
+}					t_all;
+
 /*about node*/
 int					node_append(t_stack *stack, int num);
 int					node_remove(t_stack *stack);
@@ -58,14 +66,24 @@ int					utils_atoi(const char *str);
 char				*utils_itoa(int n);
 int					utils_min(int a, int b);
 int					utils_max(int a, int b);
-void				utils_exit(t_stack *a, t_stack *b, char **argv, int n);
+void				utils_exit(t_all *all, int n);
 
 /*about libft*/
 int					ft_isspace(int c);
 int					ft_isdigit(int c);
 int					ft_get_digit_count(long int n);
 int					ft_strcmp(const char *s1, const char *s2);
-int					ft_strlen(const char *s);
+size_t				ft_strlen(const char *s);
+size_t				ft_wordcount(const char *s, char c);
+void				ft_free(char **ret);
+char				**ft_split(const char *s, char c);
+char				*ft_strchr(const char *s, int c);
+void				*ft_calloc(size_t count, size_t size);
+void				*ft_memset(void *dest, int c, size_t len);
+char				*ft_strndup(const char *s1, size_t n);
+size_t				ft_strnlen(const char *s, size_t maxlen);
+size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
+void				*ft_memchr(const void *s, int c, size_t n);
 
 /*about free*/
 void				free_argv(char **argv);
@@ -93,7 +111,7 @@ void				do_print_rrr(t_stack *a, t_stack *b);
 /*about before sort*/
 t_insert			before_sort_find_best(t_stack *a, t_stack *b);
 int					before_sort_count_rb(t_stack *b);
-int					before_sort_rearrange(int *argc, char ***argv);
+int					before_sort_rearrange(int *argc, char ***argv, t_all *all);
 
 /*about insert*/
 void				insert_ra_count(t_insert *ins, t_node *node, t_stack *stk);

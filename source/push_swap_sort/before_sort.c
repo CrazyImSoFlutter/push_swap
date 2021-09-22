@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 23:57:04 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 02:00:26 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 14:20:44 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,28 @@ int				before_sort_count_rb(t_stack *b)
 	return (count);
 }
 
-int			before_sort_rearrange(int *argc, char ***argv)
+int			before_sort_rearrange(int *argc, char ***argv, t_all *all)
 {
 	int		i;
 
 	i = 0;
-	while (i < *argc - 1)
+	if (*argc == 2)
 	{
-		(*argv)[i] = (*argv)[i + 1];
-		i++;
+		*argc = ft_wordcount((*argv)[1], ' ');
+		if (!(*argv = ft_split((*argv)[1], ' ')))
+			return (0);
+		all->argv = *argv;
+		all->flag = 1;
 	}
-	(*argv)[i] = 0;
-	(*argc)--;
+	else
+	{
+		while (i < *argc - 1)
+		{
+			(*argv)[i] = (*argv)[i + 1];
+			i++;
+		}
+		(*argv)[i] = 0;
+		(*argc)--;
+	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 00:07:51 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 01:41:20 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 14:26:30 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,18 +79,19 @@ int			utils_max(int a, int b)
 		return (b);
 }
 
-void		utils_exit(t_stack *a, t_stack *b, char **argv, int n)
+void		utils_exit(t_all *all, int n)
 {
+	if (all->flag == 1)
+		free_argv(all->argv);
 	if (n >= 1)
-		free_stack(a);
+		free_stack(all->a);
 	if (n >= 2)
-		free_stack(b);
-	if (n <= 2) {
+		free_stack(all->b);
+	if (n <= 2)
+	{
 		write(1, "Error\n", 6);
-		printf("%d\n", n);
 		exit(EXIT_FAILURE);
 	}
 	if (n > 2)
 		exit(EXIT_SUCCESS);
-	argv = NULL;
 }
