@@ -6,7 +6,7 @@
 /*   By: hnoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 12:27:45 by hnoh              #+#    #+#             */
-/*   Updated: 2021/09/22 14:37:24 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:16:41 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	while (++a < ft_strlen(s) + 1)
 	{
 		if (*(s + a) == (char)c)
-			return ((char*)(s + a));
+			return ((char *)(s + a));
 	}
 	return (NULL);
 }

@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 00:27:37 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 02:07:50 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:09:17 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int			check_digit(int argc, char **argv)
+int	check_digit(int argc, char **argv)
 {
 	int		i;
 	int		j;
@@ -32,7 +32,7 @@ int			check_digit(int argc, char **argv)
 	return (1);
 }
 
-int			check_limit(char *str, char sign)
+int	check_limit(char *str, char sign)
 {
 	if (sign == ' ' && ft_strcmp(str, "2147483647") > 0)
 		return (0);
@@ -44,7 +44,7 @@ int			check_limit(char *str, char sign)
 		return (1);
 }
 
-int			check_integer(char *str)
+int	check_integer(char *str)
 {
 	int		len;
 	char	sign;
@@ -69,7 +69,7 @@ int			check_integer(char *str)
 		return (check_limit(str, sign));
 }
 
-int			check_sorted(t_stack *a, t_stack *b)
+int	check_sorted(t_stack *a, t_stack *b)
 {
 	t_node	*cur;
 
@@ -87,7 +87,7 @@ int			check_sorted(t_stack *a, t_stack *b)
 	return (1);
 }
 
-int			check_argument(int argc, char **argv)
+int	check_argument(int argc, char **argv)
 {
 	int		i;
 

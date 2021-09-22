@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 14:00:15 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 14:00:35 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:20:06 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int		ft_get_digit_count(long int n)
+int	ft_get_digit_count(long int n)
 {
 	int		i;
 

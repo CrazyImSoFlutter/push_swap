@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 13:59:22 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 14:41:20 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:14:56 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-size_t		ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 

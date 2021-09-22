@@ -6,13 +6,13 @@
 /*   By: hnoh <hnoh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 16:38:11 by hnoh              #+#    #+#             */
-/*   Updated: 2021/09/22 14:04:16 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:14:30 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

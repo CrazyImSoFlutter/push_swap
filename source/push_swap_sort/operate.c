@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:18:56 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:06:11 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:30:11 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void		operate_swap(t_stack *a)
+void	operate_swap(t_stack *a)
 {
 	t_node	*one;
 	t_node	*two;
@@ -30,7 +30,7 @@ void		operate_swap(t_stack *a)
 	}
 }
 
-void		operate_push(t_stack *a, t_stack *b)
+void	operate_push(t_stack *a, t_stack *b)
 {
 	if (b->size == 0)
 		return ;
@@ -38,7 +38,7 @@ void		operate_push(t_stack *a, t_stack *b)
 		return ;
 }
 
-void		operate_rotate(t_stack *a)
+void	operate_rotate(t_stack *a)
 {
 	t_node	*start;
 	t_node	*end;
@@ -54,7 +54,7 @@ void		operate_rotate(t_stack *a)
 	end->next = start;
 }
 
-void		operate_reverse_rotate(t_stack *a)
+void	operate_reverse_rotate(t_stack *a)
 {
 	t_node	*new_end;
 	t_node	*end;
@@ -62,7 +62,8 @@ void		operate_reverse_rotate(t_stack *a)
 	if (a->size < 2)
 		return ;
 	end = a->head;
-	while (end->next) {
+	while (end->next)
+	{
 		if (!end->next->next)
 			new_end = end;
 		end = end->next;

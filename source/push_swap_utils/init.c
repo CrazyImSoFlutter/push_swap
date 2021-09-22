@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 21:40:08 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 01:13:26 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:09:39 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void		init_insert(t_insert *insert)
+void	init_insert(t_insert *insert)
 {
 	insert->rb = 0;
 	insert->ra = 0;

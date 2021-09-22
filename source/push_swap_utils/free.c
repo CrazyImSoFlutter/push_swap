@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 14:26:02 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:30:34 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:11:41 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void		free_argv(char **argv)
+void	free_argv(char **argv)
 {
 	int		i;
 
@@ -22,7 +22,7 @@ void		free_argv(char **argv)
 	free(argv);
 }
 
-void		free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
 	t_node	*cur;
 	t_node	*nex;

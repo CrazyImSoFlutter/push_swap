@@ -6,13 +6,13 @@
 /*   By: hnoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 11:59:06 by hnoh              #+#    #+#             */
-/*   Updated: 2021/09/22 14:03:43 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:22:01 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int		ft_isspace(int c)
+int	ft_isspace(int c)
 {
 	return ((c >= 9 && c <= 13) || c == 32);
 }

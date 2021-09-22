@@ -6,13 +6,13 @@
 /*   By: hnoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 10:02:43 by hnoh              #+#    #+#             */
-/*   Updated: 2021/09/22 14:47:35 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:19:55 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void		*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
 	unsigned char	c2;

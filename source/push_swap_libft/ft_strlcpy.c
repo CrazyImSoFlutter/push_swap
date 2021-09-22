@@ -6,13 +6,13 @@
 /*   By: hnoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 11:09:35 by hnoh              #+#    #+#             */
-/*   Updated: 2021/09/22 14:45:53 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:14:44 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t		i;
 	size_t		j;

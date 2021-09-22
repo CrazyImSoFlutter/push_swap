@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 21:03:30 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 15:37:47 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:26:11 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void			sort_others(t_stack *a, t_stack *b)
+void	sort_others(t_stack *a, t_stack *b)
 {
 	t_insert	insert;
 	int			num;
@@ -37,7 +37,7 @@ void			sort_others(t_stack *a, t_stack *b)
 	}
 }
 
-void		sort_three(t_stack *stack)
+void	sort_three(t_stack *stack)
 {
 	int		first;
 	int		second;
@@ -64,7 +64,7 @@ void		sort_three(t_stack *stack)
 		do_print_ra(stack);
 }
 
-void		sort_two(t_stack *stack)
+void	sort_two(t_stack *stack)
 {
 	if (stack->head->number > stack->head->next->number)
 		do_print_sa(stack);

@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 15:08:35 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 15:58:14 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:08:21 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void			start_sort(t_stack *a, t_stack *b)
+void	start_sort(t_stack *a, t_stack *b)
 {
 	if (a->size > 3)
 		find_max(a);
@@ -26,14 +26,12 @@ void			start_sort(t_stack *a, t_stack *b)
 		sort_others(a, b);
 }
 
-int				main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 	t_all		all;
-	
-	stack_a = NULL;
-	stack_b = NULL;
+
 	all.flag = 0;
 	if (!before_sort_rearrange(&argc, &argv, &all))
 		utils_exit(&all, 0);
@@ -41,10 +39,12 @@ int				main(int argc, char **argv)
 		return (EXIT_SUCCESS);
 	if (!check_argument(argc, argv))
 		utils_exit(&all, 0);
-	if (!(stack_a = stack_fill(argc, argv)))
+	stack_a = stack_fill(argc, argv);
+	if (stack_a == NULL)
 		utils_exit(&all, 0);
 	all.a = stack_a;
-	if (!(stack_b = stack_init()))
+	stack_b = stack_init();
+	if (stack_b == NULL)
 		utils_exit(&all, 1);
 	all.b = stack_b;
 	if (!(stack_contains(stack_a)))

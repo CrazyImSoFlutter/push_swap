@@ -6,17 +6,18 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 00:13:56 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:08:44 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:24:50 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int			node_append(t_stack *stack, int num)
+int	node_append(t_stack *stack, int num)
 {
 	t_node	*new_node;
 
-	if (!(new_node = (t_node*)malloc(sizeof(t_node))))
+	new_node = (t_node *)malloc(sizeof(t_node));
+	if (!new_node)
 	{
 		free_stack(stack);
 		return (0);
@@ -30,7 +31,7 @@ int			node_append(t_stack *stack, int num)
 	return (1);
 }
 
-int			node_remove(t_stack *stack)
+int	node_remove(t_stack *stack)
 {
 	int		num;
 	t_node	*del;

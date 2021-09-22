@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 00:07:51 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 14:26:30 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:42:34 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int			utils_atoi(const char *str)
+int	utils_atoi(const char *str)
 {
 	int		sign;
 	int		result;
@@ -34,36 +34,29 @@ int			utils_atoi(const char *str)
 	return (result * sign);
 }
 
-char				*utils_itoa(int n)
+char	*utils_itoa(int n)
 {
 	char			*str;
-	int				digit_count;
+	int				i;
 	long int		long_n;
 
-	long_n = n;
-	digit_count = ft_get_digit_count(long_n);
-	if (long_n < 0)
-		digit_count++;
-	if (!(str = malloc((digit_count + 1) * sizeof(char))))
+	str = (char *)malloc(sizeof(char) * ft_get_digit_count(n));
+	if (!str)
 		return (NULL);
-	str[0] = '0';
-	if (long_n < 0)
+	i = -1;
+	if (n < 0)
 	{
-		str[0] = '-';
-		long_n *= -1;
+		long_n = -n;
+		str[++i] = '-';
 	}
-	str[digit_count] = '\0';
-	while (((digit_count >= 0 && str[0] != '-')
-				|| (digit_count > 0 && str[0] == '-')) && long_n != 0)
-	{
-		str[digit_count - 1] = (long_n % 10) + '0';
-		long_n /= 10;
-		digit_count--;
-	}
+	else
+		long_n = n;
+	ft_convert(long_n, str, &i);
+	str[++i] = '\0';
 	return (str);
 }
 
-int			utils_min(int a, int b)
+int	utils_min(int a, int b)
 {
 	if (a >= b)
 		return (b);
@@ -71,7 +64,7 @@ int			utils_min(int a, int b)
 		return (a);
 }
 
-int			utils_max(int a, int b)
+int	utils_max(int a, int b)
 {
 	if (a >= b)
 		return (a);
@@ -79,7 +72,7 @@ int			utils_max(int a, int b)
 		return (b);
 }
 
-void		utils_exit(t_all *all, int n)
+void	utils_exit(t_all *all, int n)
 {
 	if (all->flag == 1)
 		free_argv(all->argv);

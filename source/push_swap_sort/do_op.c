@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 21:23:49 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:06:22 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:27:09 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void		do_op_rab(t_insert insert, t_stack *a, t_stack *b)
+void	do_op_rab(t_insert insert, t_stack *a, t_stack *b)
 {
 	int		i;
 
@@ -32,10 +32,10 @@ void		do_op_rab(t_insert insert, t_stack *a, t_stack *b)
 			do_print_rrb(b);
 }
 
-void		do_op_rr(t_insert insert, t_stack *a, t_stack *b)
+void	do_op_rr(t_insert insert, t_stack *a, t_stack *b)
 {
 	int		i;
-	
+
 	i = -1;
 	while (++i < utils_min(insert.ra, insert.rb))
 		do_print_rr(a, b);
@@ -47,7 +47,7 @@ void		do_op_rr(t_insert insert, t_stack *a, t_stack *b)
 			do_print_rb(b);
 }
 
-void		do_op_rrr(t_insert insert, t_stack *a, t_stack *b)
+void	do_op_rrr(t_insert insert, t_stack *a, t_stack *b)
 {
 	int		i;
 
@@ -62,7 +62,7 @@ void		do_op_rrr(t_insert insert, t_stack *a, t_stack *b)
 			do_print_rrb(b);
 }
 
-void		do_op(t_insert insert, t_stack *a, t_stack *b)
+void	do_op(t_insert insert, t_stack *a, t_stack *b)
 {
 	if (insert.op == 0)
 		do_op_rab(insert, a, b);

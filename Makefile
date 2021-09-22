@@ -33,11 +33,11 @@ SRC_LIBFT	=	ft_get_digit_count.c \
 				ft_strnlen.c \
 				ft_strlcpy.c \
 				ft_memchr.c \
+				ft_convert.c \
 
 SRC_PRINT	=	do_print_a.c \
 				do_print_b.c \
 				do_print_common.c \
-				test_print.c \
 
 SRC_STACK	=	node.c \
 				stack.c \

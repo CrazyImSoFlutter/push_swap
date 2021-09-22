@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 20:21:01 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:06:30 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:25:48 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void			insert_ra_count(t_insert *insert, t_node *node, t_stack *stack)
+void	insert_ra_count(t_insert *insert, t_node *node, t_stack *stack)
 {
 	t_node		*cur;
 	int			count;
@@ -29,7 +29,7 @@ void			insert_ra_count(t_insert *insert, t_node *node, t_stack *stack)
 	insert->ra = count;
 }
 
-void			insert_rb_count_max(t_insert *insert, t_stack *stack)
+void	insert_rb_count_max(t_insert *insert, t_stack *stack)
 {
 	t_node		*cur;
 	int			count;
@@ -46,7 +46,7 @@ void			insert_rb_count_max(t_insert *insert, t_stack *stack)
 	insert->rb = count;
 }
 
-void			insert_rb_count(t_insert *insert, t_node *node, t_stack *stack)
+void	insert_rb_count(t_insert *insert, t_node *node, t_stack *stack)
 {
 	t_node		*cur;
 	int			rb_count;
@@ -74,14 +74,14 @@ void			insert_rb_count(t_insert *insert, t_node *node, t_stack *stack)
 		insert_rb_count_max(insert, stack);
 }
 
-void			insert_op_count(t_insert *insert)
+void	insert_op_count(t_insert *insert)
 {
 	int			rab;
 	int			rr;
 	int			rrr;
 
-	rab = utils_min(insert->ra, insert->rra) +
-		utils_min(insert->rb, insert->rrb);
+	rab = utils_min(insert->ra, insert->rra)
+		+ utils_min(insert->rb, insert->rrb);
 	rr = utils_max(insert->ra, insert->rb);
 	rrr = utils_max(insert->rra, insert->rrb);
 	insert->op_count = utils_min(rab, rrr);
@@ -94,7 +94,7 @@ void			insert_op_count(t_insert *insert)
 		insert->op = 2;
 }
 
-t_insert		insert_fill(t_node *node, t_stack *a, t_stack *b)
+t_insert	insert_fill(t_node *node, t_stack *a, t_stack *b)
 {
 	t_insert	insert;
 

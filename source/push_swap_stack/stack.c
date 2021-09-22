@@ -6,17 +6,18 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 23:01:24 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 15:40:40 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:24:00 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-t_stack		*stack_init(void)
+t_stack	*stack_init(void)
 {
 	t_stack	*stack;
 
-	if (!(stack = (t_stack*)malloc(sizeof(t_stack))))
+	stack = (t_stack *)malloc(sizeof(t_stack));
+	if (!stack)
 		return (NULL);
 	stack->head = NULL;
 	stack->size = 0;
@@ -24,7 +25,7 @@ t_stack		*stack_init(void)
 	return (stack);
 }
 
-t_stack		*stack_fill(int argc, char **argv)
+t_stack	*stack_fill(int argc, char **argv)
 {
 	int		i;
 	int		num;
@@ -46,11 +47,11 @@ t_stack		*stack_fill(int argc, char **argv)
 	return (stack);
 }
 
-int			stack_contains(t_stack *stack)
+int	stack_contains(t_stack *stack)
 {
 	t_node	*std;
 	t_node	*cmp;
-	
+
 	std = stack->head;
 	while (std)
 	{
@@ -66,7 +67,7 @@ int			stack_contains(t_stack *stack)
 	return (1);
 }
 
-int			stack_sorted(t_stack *a, t_stack *b)
+int	stack_sorted(t_stack *a, t_stack *b)
 {
 	t_node	*cur;
 

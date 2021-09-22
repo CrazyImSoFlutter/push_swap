@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 22:58:13 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 14:47:57 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:41:27 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct		s_node
+typedef struct s_node
 {
 	int				number;
 	struct s_node	*next;
-}					t_node;
+}	t_node;
 
-typedef struct		s_stack
+typedef struct s_stack
 {
 	t_node			*head;
 	int				size;
 	int				max;
 	int				max2;
 	int				max3;
-}					t_stack;
+}	t_stack;
 
-typedef struct		s_insert
+typedef struct s_insert
 {
 	int				rb;
 	int				ra;
@@ -41,15 +41,15 @@ typedef struct		s_insert
 	int				op_count;
 	int				number;
 	int				op;
-}					t_insert;
+}	t_insert;
 
-typedef struct		s_all
+typedef struct s_all
 {
 	t_stack			*a;
 	t_stack			*b;
 	char			**argv;
 	int				flag;
-}					t_all;
+}	t_all;
 
 /*about node*/
 int					node_append(t_stack *stack, int num);
@@ -84,6 +84,7 @@ char				*ft_strndup(const char *s1, size_t n);
 size_t				ft_strnlen(const char *s, size_t maxlen);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void				*ft_memchr(const void *s, int c, size_t n);
+void				ft_convert(long int n, char *str, int *i);
 
 /*about free*/
 void				free_argv(char **argv);
@@ -150,4 +151,4 @@ int					check_sorted(t_stack *a, t_stack *b);
 /*about test print*/
 void				test_print(t_stack *stack);
 
-# endif
+#endif

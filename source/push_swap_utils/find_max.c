@@ -6,16 +6,16 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:16:39 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/21 22:06:59 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:13:54 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void		find_max1(t_stack *stack)
+void	find_max1(t_stack *stack)
 {
 	t_node	*cur;
-	
+
 	stack->max = -2147483648;
 	cur = stack->head;
 	while (cur)
@@ -28,10 +28,10 @@ void		find_max1(t_stack *stack)
 	}
 }
 
-void		find_max2(t_stack *stack)
+void	find_max2(t_stack *stack)
 {
 	t_node	*cur;
-	
+
 	stack->max2 = -2147483648;
 	cur = stack->head;
 	while (cur)
@@ -40,27 +40,25 @@ void		find_max2(t_stack *stack)
 			stack->max2 = cur->number;
 		cur = cur->next;
 	}
-
 }
 
-void		find_max3(t_stack *stack)
+void	find_max3(t_stack *stack)
 {
 	t_node	*cur;
-	
+
 	stack->max3 = -2147483648;
 	cur = stack->head;
 	while (cur)
 	{
-		if (cur->number > stack->max3 &&
-				cur->number != stack->max &&
-				cur->number != stack->max2)
+		if (cur->number > stack->max3
+			&& cur->number != stack->max
+			&& cur->number != stack->max2)
 			stack->max3 = cur->number;
 		cur = cur->next;
 	}
-
 }
 
-void		find_max(t_stack *stack)
+void	find_max(t_stack *stack)
 {
 	find_max1(stack);
 	find_max2(stack);

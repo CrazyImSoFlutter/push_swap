@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_print.c                                       :+:      :+:    :+:   */
+/*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 15:16:19 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 15:30:10 by nogeun           ###   ########.fr       */
+/*   Created: 2021/09/22 17:35:22 by nogeun            #+#    #+#             */
+/*   Updated: 2021/09/22 17:41:17 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	test_print(t_stack *stack)
+void	ft_convert(long int n, char *str, int *i)
 {
-	write(1, "****stack****\n", 15);
-	t_node *cur = stack->head;
-	while (cur)
+	if (n / 10 == 0)
+		str[++(*i)] = '0' + n % 10;
+	else
 	{
-		int num = cur->number;
-		
-		printf("%d\n", num);
-		cur = cur->next;
+		ft_convert(n / 10, str, i);
+		str[++(*i)] = '-' + n % 10;
 	}
 }

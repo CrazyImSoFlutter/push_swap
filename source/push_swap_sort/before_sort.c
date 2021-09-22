@@ -6,13 +6,13 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 23:57:04 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 14:20:44 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:29:11 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-t_insert		before_sort_find_best(t_stack *a, t_stack *b)
+t_insert	before_sort_find_best(t_stack *a, t_stack *b)
 {
 	t_node		*cur;
 	t_insert	best;
@@ -21,9 +21,9 @@ t_insert		before_sort_find_best(t_stack *a, t_stack *b)
 
 	i = 0;
 	cur = a->head;
-	while (cur->number == a->max ||
-			cur->number == a->max2 ||
-			cur->number == a->max3)
+	while (cur->number == a->max
+		|| cur->number == a->max2
+		|| cur->number == a->max3)
 		cur = cur->next;
 	best = insert_fill(cur, a, b);
 	cur = a->head;
@@ -31,16 +31,16 @@ t_insert		before_sort_find_best(t_stack *a, t_stack *b)
 	{
 		cur = cur->next;
 		tmp = insert_fill(cur, a, b);
-		if (tmp.op_count < best.op_count &&
-				cur->number != a->max &&
-				cur->number != a->max2 &&
-				cur->number != a->max3)
+		if (tmp.op_count < best.op_count
+			&& cur->number != a->max
+			&& cur->number != a->max2
+			&& cur->number != a->max3)
 			best = tmp;
 	}
 	return (best);
 }
 
-int				before_sort_count_rb(t_stack *b)
+int	before_sort_count_rb(t_stack *b)
 {
 	t_node		*cur;
 	int			count;
@@ -57,7 +57,7 @@ int				before_sort_count_rb(t_stack *b)
 	return (count);
 }
 
-int			before_sort_rearrange(int *argc, char ***argv, t_all *all)
+int	before_sort_rearrange(int *argc, char ***argv, t_all *all)
 {
 	int		i;
 
@@ -65,7 +65,8 @@ int			before_sort_rearrange(int *argc, char ***argv, t_all *all)
 	if (*argc == 2)
 	{
 		*argc = ft_wordcount((*argv)[1], ' ');
-		if (!(*argv = ft_split((*argv)[1], ' ')))
+		*argv = ft_split((*argv)[1], ' ');
+		if (!*argv)
 			return (0);
 		all->argv = *argv;
 		all->flag = 1;

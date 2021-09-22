@@ -6,13 +6,13 @@
 /*   By: hnoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 11:16:00 by hnoh              #+#    #+#             */
-/*   Updated: 2021/09/22 14:31:04 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:19:09 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-size_t		ft_wordcount(char const *s, char c)
+size_t	ft_wordcount(char const *s, char c)
 {
 	char	flag;
 	size_t	count;
@@ -27,7 +27,8 @@ size_t		ft_wordcount(char const *s, char c)
 			flag = 1;
 		else
 		{
-			(flag == 1) ? count++ : count;
+			if (flag == 1)
+				count++;
 			flag = 0;
 		}
 		s++;
@@ -35,7 +36,7 @@ size_t		ft_wordcount(char const *s, char c)
 	return (count);
 }
 
-void		ft_free(char **ret)
+void	ft_free(char **ret)
 {
 	int		i;
 
@@ -48,7 +49,7 @@ void		ft_free(char **ret)
 	free(ret);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	const size_t	wordcnt = ft_wordcount(s, c);
 	const char		*p = s;
@@ -56,7 +57,8 @@ char			**ft_split(char const *s, char c)
 	char			*end;
 	size_t			i;
 
-	if (!s || !(ret = ft_calloc(wordcnt + 1, sizeof(char *))))
+	ret = ft_calloc(wordcnt + 1, sizeof(char *));
+	if (!s || !ret)
 		return (NULL);
 	i = 0;
 	while (i < wordcnt)
