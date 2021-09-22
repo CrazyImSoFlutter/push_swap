@@ -6,7 +6,7 @@
 /*   By: nogeun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 22:58:13 by nogeun            #+#    #+#             */
-/*   Updated: 2021/09/22 17:41:27 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:52:27 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int					ft_get_digit_count(long int n);
 int					ft_strcmp(const char *s1, const char *s2);
 size_t				ft_strlen(const char *s);
 size_t				ft_wordcount(const char *s, char c);
-void				ft_free(char **ret);
+int					ft_word_index(const char *s, char c, int i);
+char				*ft_next_word(const char *s, char c, int *i);
 char				**ft_split(const char *s, char c);
 char				*ft_strchr(const char *s, int c);
 void				*ft_calloc(size_t count, size_t size);

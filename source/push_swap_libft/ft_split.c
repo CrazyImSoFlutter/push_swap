@@ -6,7 +6,7 @@
 /*   By: hnoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 11:16:00 by hnoh              #+#    #+#             */
-/*   Updated: 2021/09/22 17:19:09 by nogeun           ###   ########.fr       */
+/*   Updated: 2021/09/22 17:51:11 by nogeun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,45 +36,57 @@ size_t	ft_wordcount(char const *s, char c)
 	return (count);
 }
 
-void	ft_free(char **ret)
+int	ft_word_index(const char *s, char c, int i)
 {
-	int		i;
+	int	ret;
 
-	i = 0;
-	while (ret[i])
+	ret = 0;
+	while (s[i] != c && s[i] != '\0')
 	{
-		free(ret[i]);
+		ret++;
 		i++;
 	}
-	free(ret);
+	return (ret);
+}
+
+char	*ft_next_word(const char *s, char c, int *i)
+{
+	char	*ret;
+	int		k;
+
+	ret = (char *)malloc(sizeof(char) * ft_word_index(s, c, *i) + 1);
+	if (!ret)
+		return (NULL);
+	k = 0;
+	while (s[*i] != c && s[*i])
+		ret[k++] = s[(*i)++];
+	ret[k] = '\0';
+	return (ret);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	const size_t	wordcnt = ft_wordcount(s, c);
-	const char		*p = s;
-	char			**ret;
-	char			*end;
-	size_t			i;
+	char	**ret;
+	int		i;
+	int		j;
 
-	ret = ft_calloc(wordcnt + 1, sizeof(char *));
-	if (!s || !ret)
-		return (NULL);
-	i = 0;
-	while (i < wordcnt)
+	if (s)
 	{
-		if (*s != c)
+		i = 0;
+		ret = (char **)malloc(sizeof(char *) * ft_wordcount(s, c) + 1);
+		if (!ret)
+			return (NULL);
+		j = 0;
+		while (s[i] != '\0')
 		{
-			if (!(end = ft_strchr(s, c)))
-				end = (char *)p + ft_strlen(p);
-			if (!(ret[i++] = ft_strndup(s, end - s)))
-			{
-				ft_free(ret);
-				return (NULL);
-			}
-			s = end;
+			while (s[i] == c && s[i])
+				i++;
+			if (s[i])
+				ret[j++] = ft_next_word(s, c, &i);
 		}
-		s++;
+		ret[j] = 0;
+		return (ret);
 	}
-	return (ret);
+	else
+		return (NULL);
 }
